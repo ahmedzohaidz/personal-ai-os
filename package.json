@@ -1,0 +1,42 @@
+{
+  "name": "personal-ai-os",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck:core": "tsc -p tsconfig.core.json",
+    "test:core": "npm run typecheck:core && node tests/golden-workflow.mjs",
+    "test": "npm run test:core && npm run test:local && npm run test:schema",
+    "typecheck": "tsc --noEmit",
+    "typecheck:local": "tsc -p tsconfig.local.json",
+    "test:local": "npm run typecheck:local && node tests/local-store.mjs",
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop",
+    "supabase:reset": "npx supabase db reset",
+    "supabase:diff": "npx supabase db diff -f schema_update",
+    "test:schema": "node tests/schema-contract.mjs"
+  },
+  "dependencies": {
+    "@openai/agents": "0.18.0",
+    "@supabase/supabase-js": "2.117.2",
+    "@temporalio/activity": "1.24.0",
+    "@temporalio/client": "1.24.0",
+    "@temporalio/worker": "1.24.0",
+    "@temporalio/workflow": "1.24.0",
+    "next": "16.3.6",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "4.6.5",
+    "@supabase/ssr": "0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.3",
+    "supabase": "2.117.0"
+  }
+}

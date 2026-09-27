@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": ".local-dist",
+    "rootDir": "src"
+  },
+  "include": [
+    "src/core/**/*.ts",
+    "src/infrastructure/local/**/*.ts",
+    "tests/node-shims.d.ts"
+  ]
+}

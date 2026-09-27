@@ -1,0 +1,2 @@
+-- Intentionally minimal. Do not commit real user data or secrets.
+-- Create local test users through Supabase Studio/Auth when needed.
